@@ -162,7 +162,7 @@ footer {
 
 @media (max-height: 400px) {
     .highlight__title {
-        line-height: 1em;
+        line-height: 1.1em;
     }
     .highlight__text__info {
         img {
@@ -174,8 +174,8 @@ footer {
     }
 }
 
-@media (max-height: 800px) {
+@media (max-height: 700px) {
     .highlight__title {
-        line-height: 1.2em;
+        line-height: 1.3em;
     }
 }

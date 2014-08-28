@@ -129,8 +129,7 @@ gulp.task('html', function() {
         // the next line to only include styles your project uses.
         .pipe($.if('*.css', $.uncss({
             html: [
-                'app/index.html',
-                'app/styleguide/index.html'
+                'app/index.html'
             ],
             // CSS Selectors for UnCSS to ignore
             ignore: [
@@ -142,8 +141,6 @@ gulp.task('html', function() {
         .pipe($.if('*.css', $.csso()))
         .pipe($.useref.restore())
         .pipe($.useref())
-        // Update Production Style Guide Paths
-        .pipe($.replace('components/components.css', 'components/main.min.css'))
         // Minify Any HTML
         .pipe($.if('*.html', $.minifyHtml()))
         // Output Files

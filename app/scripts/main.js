@@ -1,3 +1,5 @@
+/* global FastClick, jQuery */
+
 (function($) {
     'use strict';
 

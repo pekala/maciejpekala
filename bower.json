@@ -1,0 +1,28 @@
+{
+  "name": "maciejpekala",
+  "version": "0.1.0",
+  "homepage": "https://github.com/pekala/maciejpekala",
+  "authors": [
+    "Maciej Pekala <mp@qbuy.net>"
+  ],
+  "description": "Maciej Pekala's place on web",
+  "main": "app/scripts/main.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "normalize-css": "~3.0.1",
+    "FitText.js": "*",
+    "animate.css": "~3.2.0",
+    "WOW": "~1.0.1",
+    "velocity": "~0.11.9",
+    "fastclick": "~1.0.3"
+  }
+}

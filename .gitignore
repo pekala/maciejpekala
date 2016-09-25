@@ -1,9 +1,0 @@
-node_modules
-.sass-cache
-dist
-.tmp
-/app/bower_components
-
-*.css
-
-*.css

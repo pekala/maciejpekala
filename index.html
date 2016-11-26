@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="Maciej Pekala's place on the web">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Maciej Pekala's place on the web</title>
+        <title>Maciej Pękala</title>
         <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&subset=latin-ext" rel="stylesheet">
         <style>
             body {
@@ -90,6 +90,22 @@
                 from {transform: translate(-50%, 0px);}
                 65% {transform: translate(-50%, 15px);}
                 to {transform: translate(-50%, -0px);}
+            }
+
+            @media print {
+                body {
+                    backgroud: white;
+                    color: black;
+                    font-family: serif;
+                }
+                .page {
+                    display: block;
+                    min-height: 0;
+                }
+                iframe,
+                ul {
+                    display: none;
+                }
             }
         </style>
     </head>

@@ -5,22 +5,38 @@
         <meta name="description" content="Maciej Pekala's place on the web">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Maciej Pekala's place on the web</title>
-        <link href="https://fonts.googleapis.com/css?family=Space+Mono&subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&subset=latin-ext" rel="stylesheet">
         <style>
             body {
                 font-family: 'Space Mono', monospace;
-                height: 100vh;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
                 background: #2980b9;
                 background: -webkit-linear-gradient(right, #2980b9, #2c3e50);
                 background: -o-linear-gradient(right, #2980b9, #2c3e50);
                 background: linear-gradient(to left, #2980b9, #2c3e50);
+                font-weight: 400;
                 color: white;
-                padding: 0 20px;
                 margin: 0;
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            @media only screen and (max-width: 700px) {
+                body {
+                    font-size: 0.9em;
+                    padding: 20px 10px;
+                }
+            }
+            .page {
+                min-height: 500px;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            @media only screen and (min-height: 600px) {
+                .page {
+                    justify-content: center;
+                }
             }
             a {
                 line-height: 2;
@@ -29,6 +45,24 @@
                 background-size: 100% 1px;
                 background-position: 0 1.3em;
                 text-decoration: none;
+            }
+            strong {
+                font-weight: 700;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.2em;
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+            h3 {
+                font-size: 1em;
+                font-weight: 400;
+                margin-top: 0;
+                margin-bottom: 0;
+                font-style: italic;
             }
             a:hover {
                 background: none;
@@ -40,24 +74,74 @@
             ul {
                 padding: 0;
             }
+            .down-icon {
+                padding: 20px;
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                animation-name: floating;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease-in-out;
+                background: none;
+            }
+
+            @keyframes floating {
+                from {transform: translate(-50%, 0px);}
+                65% {transform: translate(-50%, 15px);}
+                to {transform: translate(-50%, -0px);}
+            }
         </style>
     </head>
     <body>
-        <h1>Maciej Pękala</h1>
-        <p>Hi. I'm <a id="maciej-link" target="_blank" ref="noopener" href="https://en.wiktionary.org/wiki/Maciej">Maciej</a>. I live in <a target="_blank" ref="noopener" href="https://monocle.com/film/affairs/most-liveable-city-copenhagen/">Copenhagen</a> and I do frontend for <a target="_blank" ref="noopener" href="http://issuu.com">issuu</a>.</p>
-        <audio id="maciej-audio" src="maciej.ogg"></audio>
-        <ul>
-            <li><a target="_blank" ref="noopener" href="https://twitter.com/penzington">Twitter</a></li>
-            <li><a target="_blank" ref="noopener" href="https://github.com/pekala">GitHub</a></li>
-            <li><a target="_blank" ref="noopener" href="https://linkedin.com/in/pekalamaciej">LinkedIn</a></li>
-        <ul>
-        <script type="text/javascript">
-            var audio = document.getElementById('maciej-audio');
-            var audioLink = document.getElementById('maciej-link');
-            audioLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                audio.play();
-            }, false);
-        </script>
+        <div class="page">
+            <h1>Maciej Pękala</h1>
+            <p>Hi. I'm <a id="maciej-link" target="_blank" ref="noopener" href="https://en.wiktionary.org/wiki/Maciej">Maciej</a>. I live in <a target="_blank" ref="noopener" href="https://monocle.com/film/affairs/most-liveable-city-copenhagen/">Copenhagen</a> and I do frontend for <a target="_blank" ref="noopener" href="http://issuu.com">issuu</a>.</p>
+            <audio id="maciej-audio" src="maciej.ogg"></audio>
+            <ul>
+                <li><a target="_blank" ref="noopener" href="https://twitter.com/penzington">Twitter</a></li>
+                <li><a target="_blank" ref="noopener" href="https://github.com/pekala">GitHub</a></li>
+                <li><a target="_blank" ref="noopener" href="https://linkedin.com/in/pekalamaciej">LinkedIn</a></li>
+            </ul>
+            <a class="down-icon" href="#cv">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30px" height="30px">
+                    <g fill="#ffffff">
+                        <path d="M256 393.6c-2.8 0-5.5-1-7.6-3.2L3 136.4c-4-4.3-4-11 .3-15 4.2-4 11-4 15 .3l245.4 254c4 4.2 4 11-.3 15-2 2-4.8 3-7.4 3z"/>
+                        <path d="M256 393.6c-2.6 0-5.3-1-7.3-3-4.2-4-4.3-10.7-.3-15l245.5-254c4-4 10.5-4.2 14.7-.2 4.2 4 4.3 10.7.3 15l-245.4 254c-2 2-4.8 3.2-7.6 3.2z"/>
+                    </g>
+                </svg>
+            </a>
+            <script type="text/javascript">
+                var audio = document.getElementById('maciej-audio');
+                var audioLink = document.getElementById('maciej-link');
+                audioLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    audio.play();
+                }, false);
+            </script>
+        </div>
+        <div class="page" id="cv">
+            <h1>Experience</h1>
+            <h2><strong>issuu, DK</strong> <em>2015-present</em></h2>
+            <p>Development and architecture of frontend for a digital publishing platform used by thousands of publishers and milions of readers. I participated in projects related to customer acquisition, tooling for publishers, reading experience and integration with design software. I designed and implemented internal system of reusable UI components as well as drove the process of modernizing the frontend codebase and tackling technical debt. Buzzwords: React, Webpack, Redux, CSS Modules, Jest, Flowtype.</p>
+
+            <h2><strong>QBuy, DK</strong> <em>2012-2014</em></h2>
+            <p>Frontend developer of a hybrid mobile app and a store management system for an e-commerce platform. As the only frontender on the project, I was responsible for choosing technologies, designing architecture and implementing features for a product of an ambitious, small startup. I learned how to work as a part of a scrum team and how to collaborate with backend engineers and business stakeholders. Buzzwords: Backbone, PhoneGap, Sass, Gulp, Browserify, NightwatchJS, Marionette.</p>
+
+            <h1>Education</h1>
+            <h2><strong>M.Sc. in Wireless Engineering</strong></h2>
+            <h3>Technical University of Denmark, 2014</h3>
+            <p>My Master's thesis involved designing a microwave antenna for a radar for sports application.</p>
+
+            <h2><strong>B.Eng. in Telecommunications</strong></h2>
+            <h3>Technical University of Gdańsk, PL, 2012</h3>
+            <p>My Bachelor thesis was devoted to software for simulating Wi-Fi signal propagation in office spaces.</p>
+
+            <h1>Talks</h1>
+            <h2><strong>Rethinking frontend at issuu.com</strong></h2>
+            <h3>At The Frontend, DK, 2016</h3>
+            <p>Together with a colleague, Kenneth Skovhus, I talked about the journey of our engineering team towards more maintable frontend and how we approached fighting technical debt. We showed how we adjusted the architecture of our codebase to match changes in the organization and how that enabled us to experiement with new technologies and techniques e.g. React.</p>
+            <iframe src="https://player.vimeo.com/video/168543655?byline=0&portrait=0" width="100%" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
     </body>
 </html>
